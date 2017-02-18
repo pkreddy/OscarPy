@@ -22,7 +22,7 @@ base_url = "http://www.imdb.com/"
 
 # gives all the information about the given movie
 def get_movie_data():
-
+    # used to get movie data
     return
 
 
