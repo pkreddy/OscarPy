@@ -19,22 +19,6 @@ base_url = "http://www.imdb.com/"
 # #    #//*[@id="main"]/div[1]/blockquote/blockquote[1]/div[1]/div/a  movie name
 # #    #//*[@id="main"]/div[1]/blockquote/blockquote[1]/div[1]/strong/a movie link
 
-# create a data file
-def data_file():
-    return
-
-# write the data to csv file
-def write_to_csv():
-    return
-
-# gives all the information about the given movie
-def get_movie_data():
-    return
-
-# gives all the information about the film crew
-def get_film_crew_data():
-    return
-
 # gives the response of the url as tree
 def url_opener(url):
     # response = urllib.request.urlopen("http://www.imdb.com/event/ev0000003/2017")
@@ -45,6 +29,31 @@ def url_opener(url):
     # print(soup.prettify())
     tree = html.fromstring(str(soup))
     return tree
+
+# create a data file
+def data_file():
+    return
+
+# write the data to csv file
+def write_to_csv():
+    return
+
+# gives all the information about the film crew
+def get_film_crew_data():
+
+    return
+
+
+# gives all the information about the given movie
+def get_movie_data(response,title):
+
+    return
+
+# returns the genre of the movie
+def get_genre_for_movie(url):
+    response = url_opener(base_url+''.join(url))
+    genre = response.xpath("//div[@itemprop='genre']/a/text()")
+    return genre
 
 
 def oscar_nominees(response):
@@ -69,11 +78,14 @@ def oscar_nominees(response):
                     "//*[@id='main']/div[1]/blockquote[1]/blockquote[" + str(j) + "]/div[1]/strong/a/text()"))
                 print(response.xpath(
                     "//*[@id='main']/div[1]/blockquote[1]/blockquote[" + str(j) + "]/div[1]/strong/a/@href"))
+                print(get_genre_for_movie(response.xpath(
+                    "//*[@id='main']/div[1]/blockquote[1]/blockquote[" + str(j) + "]/div[1]/strong/a/@href")))
                 print()
                 print("||||||Nominees||||||")
             else:
                 print(response.xpath(
                     "//*[@id='main']/div[1]/blockquote[1]/blockquote[" + str(i) + "]/div["+str(j)+"]/strong/a/text()"))
+                print(get_genre_for_movie(response))
                 # //*[@id='main']/div[1]/blockquote[1]/blockquote[1]/div[1]/strong/a/text()
     other_categories = len(response.xpath("//div[@class='award']"))
 
