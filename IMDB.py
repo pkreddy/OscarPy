@@ -19,12 +19,21 @@ base_url = "http://www.imdb.com/"
 # #    #//*[@id="main"]/div[1]/blockquote/blockquote[1]/div[1]/div/a  movie name
 # #    #//*[@id="main"]/div[1]/blockquote/blockquote[1]/div[1]/strong/a movie link
 
+# create a data file
+def data_file():
+    return
+
+# write the data to csv file
+def write_to_csv():
+    return
 
 # gives all the information about the given movie
 def get_movie_data():
-    # used to get movie data
     return
 
+# gives all the information about the film crew
+def get_film_crew_data():
+    return
 
 # gives the response of the url as tree
 def url_opener(url):
@@ -67,6 +76,7 @@ def oscar_nominees(response):
                     "//*[@id='main']/div[1]/blockquote[1]/blockquote[" + str(i) + "]/div["+str(j)+"]/strong/a/text()"))
                 # //*[@id='main']/div[1]/blockquote[1]/blockquote[1]/div[1]/strong/a/text()
     other_categories = len(response.xpath("//div[@class='award']"))
+
     for i in range(2, other_categories + 1):
         print("category")
         print(response.xpath("//div[@class='award']["+str(i)+"]/h1/text()"))
