@@ -1,0 +1,18 @@
+year,movie,movie_genre,category,oscar_result
+2017,Moonlight, Drama,Best Motion Picture of the Year,1
+2017,Arrival, Drama: Mystery: Sci-Fi: Thriller,Best Motion Picture of the Year,0
+2017,Fences, Drama,Best Motion Picture of the Year,0
+2017,Hacksaw Ridge, Biography: Drama: History: War,Best Motion Picture of the Year,0
+2017,Hell or High Water, Crime: Drama: Western,Best Motion Picture of the Year,0
+2017,Hidden Figures, Biography: Drama: History,Best Motion Picture of the Year,0
+2017,La La Land, Comedy: Drama: Music: Musical: Romance,Best Motion Picture of the Year,0
+2017,Lion, Biography: Drama,Best Motion Picture of the Year,0
+2017,Manchester by the Sea, Drama,Best Motion Picture of the Year,0
+2016,Spotlight, Crime: Drama: History,Best Motion Picture of the Year,1
+2016,The Revenant, Adventure: Drama: Thriller: Western,Best Motion Picture of the Year,0
+2016,Room, Drama,Best Motion Picture of the Year,0
+2016,Brooklyn, Drama: Romance,Best Motion Picture of the Year,0
+2016,Bridge of Spies, Drama: History: Thriller,Best Motion Picture of the Year,0
+2016,The Martian, Adventure: Drama: Sci-Fi,Best Motion Picture of the Year,0
+2016,Mad Max: Fury Road, Action: Adventure: Sci-Fi: Thriller,Best Motion Picture of the Year,0
+2016,The Big Short, Biography: Comedy: Drama: History,Best Motion Picture of the Year,0
