@@ -82,8 +82,10 @@ def oscar_nominees(response, year):
                 movie_href = list_to_string(response.xpath(
                     "//*[@id='main']/div[1]/blockquote[1]/blockquote[" + str(j) + "]/div[1]/strong/a/@href"))
                 movie_genre = get_genre(movie_href)
-                print(movie + movie_href + movie_genre)
                 movie_genre = movie_genre.replace(",","")
+                movie = movie.replace(",","")
+                movie_href = movie_href.replace(",","")
+                print(movie + movie_href + movie_genre)
                 write_to_csv(year+","+movie+","+movie_genre+","+categories[i - 1]+","+"1")
                 print()
                 if categories[i - 1] == 1:
@@ -98,8 +100,10 @@ def oscar_nominees(response, year):
                     "//*[@id='main']/div[1]/blockquote[1]/blockquote[" + str(i) + "]/div[" + str(
                         j) + "]/strong/a/@href"))
                 movie_genre = get_genre(movie_href)
-                print(movie + movie_href + movie_genre)
                 movie_genre = movie_genre.replace(",","")
+                movie = movie.replace(",","")
+                movie_href = movie_href.replace(",","")
+                print(movie + movie_href + movie_genre)
                 write_to_csv(year + "," + movie + "," + movie_genre + "," +categories[i - 1]+","+ "0")
                 # //*[@id='main']/div[1]/blockquote[1]/blockquote[1]/div[1]/strong/a/text()
     other_categories = len(response.xpath("//div[@class='award']"))
@@ -129,7 +133,8 @@ def collect_years():
         year = response.xpath(year_xpath)
         year = [int(i) for i in year]
         y = str(year[0])
-        oscar_nominees(url_opener(base_url + "event/ev0000003/" + y), y)
+        year_href = list_to_string(response.xpath("//h3[text()='Event History']/../a[" + str(i) + "]/@href"))
+        oscar_nominees(url_opener(base_url + year_href[1:]), y)
     return year
 
 
